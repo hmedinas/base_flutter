@@ -1,0 +1,7 @@
+{
+  "apiBaseUrl": "https://api-dev.miapp.com",
+  "apiAuthUrl": "https://api-dev.miapp.com",
+  "sentryEnabled": false,
+  "logLevel": "debug",
+  "viewLog": false
+}
