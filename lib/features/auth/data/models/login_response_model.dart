@@ -1,67 +1,41 @@
 import 'package:base_flutter/core/common/domain/entities/user_models.dart';
 import 'package:flutter/material.dart';
 
-class LoginResponseModel{
-    final int statusCode;
-    final String message;
-    UserModels ? user;
+class LoginResponseModel {
+  final bool isAuthenticated;
+  final String message;
+  final String? accessToken;
+  final UserModels? user;
 
-    LoginResponseModel({
-        required this.statusCode,
-        required this.message,
-        this.user
-    });
+  LoginResponseModel({
+    required this.isAuthenticated,
+    required this.message,
+    this.accessToken,
+    this.user,
+  });
 
-    factory LoginResponseModel.fromApi(Map<String, dynamic> json, String userAuth, String passAuth) {
+  factory LoginResponseModel.fromApi(
+    Map<String, dynamic> json,
+    String userAuth,
+    String passAuth,
+  ) {
 
-        final bool isSuccess = json["state"] ?? false;
-        final String msg = json["message"] ?? '';
-        UserModels? user;
-    
-        int code = isSuccess ? 200 : 400;
-  
-        // ... mapeo del usuario ...
-        if (msg == "Se debe cambiar la clave." && code == 400) {
-            user = UserModels(
-            UserName: userAuth,
-            Session: '0000-0000-0000-0000-0000-0000',
-            Nombre: 'xxx',
-            Apellido: 'xxx',
-            Password: passAuth,
-            FullName: 'xxx',
-            Email: 'xxx',
-            Rol: "Usuario",
-            );
+    final bool isSuccess = json["isAuthenticated"] ?? false;
+    final String msg = json["message"] ?? '';
+    final String? token = json["accessToken"];
 
-            return LoginResponseModel(statusCode: 300, message: msg, user: user);
-        }
+    UserModels? userData;
+    if (isSuccess && json["user"] != null) {
+        userData = UserModels.fromJson(json["user"]);
+        userData.password = passAuth;
+        userData.userName = userAuth;   
+    }
 
-        if (code == 200) {
-            final data = json["list"][0];
-
-            user = UserModels(
-            UserName: userAuth,
-            Session: data["USERTOKEN"],
-            Nombre: data["NOMBRE"],
-            Apellido: data["APELLIDO"],
-            Password: passAuth,
-            FullName: data["FULLNAME"],
-            Email: data["EMAIL"],
-            Rol: "Usuario",
-            );
-
-            if (data["CHANGEPASS"] > 0) {
-            code = 300; // requiere cambio de contraseña
-            }
-        }
-
-    
-   return LoginResponseModel(
-        statusCode: code,
-        message: msg,
-        user: code != 200 ? (code != 300 ? null : user) : user,
-      );
-  
+    return LoginResponseModel(
+      isAuthenticated: isSuccess,
+      message: msg,
+      accessToken: token,
+      user: userData,
+    );
   }
 }
-    

@@ -9,6 +9,13 @@ class AppRoutesScreen {
   static const String home = 'home';
   static const String error = 'error';
   static const String devDashboard = 'not_found';
+
+  static const String homeRadial = 'home_radial';
+  static const String homeBentoBox = 'home_bentoBox';
+  static const String homeCategori = 'home_categori';
+  static const String homeDashboard = 'home_dashboard';
+  static const String homeGrid = 'home_grid';
+
 }
 
 class AppAssets {

@@ -1,7 +1,12 @@
+import 'package:base_flutter/core/common/provider/app_state_provider.dart';
 import 'package:base_flutter/core/config/config_reader.dart';
 import 'package:base_flutter/core/router/app_router.dart';
 import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:base_flutter/core/utils/console.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+
 
 void main() async {
 
@@ -9,7 +14,7 @@ void main() async {
     WidgetsFlutterBinding.ensureInitialized();
 
     // 2. Iniciando la configuración según el entorno (inyectado por --dart-define)
-    const environment = String.fromEnvironment(
+    const env = String.fromEnvironment(
         'ENVIRONMENT',
         defaultValue: 'dev',
     );
@@ -17,14 +22,42 @@ void main() async {
     // Inicializamos el ConfigReader con el entorno deseado (se lee el JSON de assets)
     try
     {
-        await ConfigReader.initialize(environment: environment);
+        await ConfigReader.initialize(environment: env);
+        await Console.initialize();
     } 
     catch (e) {
         debugPrint('Error crítico inicializando configuración: $e');
     }
   
+    // TODO: esto es solo si usamos provider
+    /*
+    runApp(
+        AppStateProvider(
+            child: MainApp(environment: env)
+            )
+        );
+        */
 
-  runApp(const MainApp(environment: environment,));
+    // TODO: esto es solo si usamos riverpod
+    /*
+    runApp(
+        const ProviderScope(
+            child: MainApp(environment: env)
+            )
+        );
+      */
+
+    // TODO: esto es solo si usamos riverpod y provider
+    runApp(
+    // 1. Riverpod envuelve a todos (es el más externo)
+    const ProviderScope(
+      // 2. Tu AppState de Provider (el que ya tienes)
+      child: AppStateProvider(
+         child: MainApp(environment: env)
+      ),
+    ),
+  );
+ 
 }
 
 class MainApp extends StatelessWidget {

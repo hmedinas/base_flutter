@@ -8,8 +8,8 @@ import 'package:base_flutter/features/auth/presentation/widgets/login_background
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginProviderScreen extends StatelessWidget {
+  const LoginProviderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text('Inicio de session', style: AppTheme.initLoginTitle),
+                  Text('Inicio de session (Provider)', style: AppTheme.initLoginTitle),
                   SizedBox(height: 15),
                   ChangeNotifierProvider(
                     create: (_) => AuthProvider(AuthApi()),
@@ -98,7 +98,7 @@ class _loginForm extends StatelessWidget {
             onPressed: authProvider.isLoading
                 ? null
                 : () async {
-                    print('asdasdas');
+                    print('press button');
                     // quitar el teclado
                     FocusScope.of(context).unfocus();
 
@@ -115,19 +115,12 @@ class _loginForm extends StatelessWidget {
                     final response = await authProvider.login();
                     // logica de llamada a servico de OAUTH
 
-                    if (response == null) return;
-                    if(response.statusCode==200){
+                    if (response == null) 
+                        return;
+                        
+                    if(response.isAuthenticated){
                          mostrarAlert(context, "OK", typeAlert.ok);
                         return;
-                    }
-                     if(response.statusCode==300) // cambio de password
-                    {
-                        
-                        // Preferences.User =response.usuario!;
-                        // Navigator.pushReplacementNamed(context, 'changePass',);
-                        mostrarAlert(context, "Cambio de paass", typeAlert.mensaje);
-                        return;
-
                     }
                     else{
                         mostrarAlert(context, response.message, typeAlert.error);

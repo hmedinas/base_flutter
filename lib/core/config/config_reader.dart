@@ -33,6 +33,7 @@ class ConfigReader {
     return _config!;
   }
 
+  static bool get viewLog => config.app.viewLog;
   static String get currentEnv => _environment;
   static String get baseUrl => config.api.baseUrl;
   static String get baseAuthUrl => config.api.authUrl;

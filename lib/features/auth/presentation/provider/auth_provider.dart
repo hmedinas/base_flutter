@@ -60,7 +60,7 @@ class AuthProvider extends ChangeNotifier {
       final response = await _authService.login(_userName, _password);
 
       // Lógica de códigos de respuesta según tu API
-      if (response.statusCode != 200 && response.statusCode != 300) {
+      if (response.isAuthenticated != true) {
         _errorMessage = response.message;
       }
       

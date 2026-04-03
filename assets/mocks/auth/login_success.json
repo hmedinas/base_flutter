@@ -1,0 +1,32 @@
+{
+  "isAuthenticated": true,
+  "message" : "Autenticado correctamente",
+  "accessToken": "123e123dx123xh123ux213x21-x312x3im1239x12x3213-x123mx123x21",
+  "user": {
+    "title":  "Tecnico",
+    "fullName": "Juan Medrano",
+    "userName":     "jmedrano",
+    "email":        "juanito@gmail.com",
+    "userHash":     null,
+    "isActive":     true,
+    "department":   24,
+    "departmentDesc": "Sistemas",
+    "idUser": 123,
+    "roles": [
+      "Administrador",
+      "Supervisor"
+    ],
+    "businessModels":[
+      {
+        "empresa":"Empresa 1",
+        "desEmpresa":"Descripcion empresa 1",
+        "negocio":"Negocio 1"
+      },
+      {
+        "empresa":"Empresa 2",
+        "desEmpresa":"Descripcion empresa 2",
+        "negocio":"Negocio 2"
+      }
+    ]
+  }
+}

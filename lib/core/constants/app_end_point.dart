@@ -6,7 +6,8 @@ abstract class AppEndPoint {
 
 class _Login {
   const _Login();
-  final String login = '/login';
+  
+  final String login = '/auth/login';
 
 }
 
