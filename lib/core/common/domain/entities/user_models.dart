@@ -1,4 +1,4 @@
-import 'package:base_flutter/core/common/domain/entities/business_models.dart';
+import 'package:hm_flutter_base/core/common/domain/entities/business_models.dart';
 
 class UserModels {
   final String title;

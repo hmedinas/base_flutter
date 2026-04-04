@@ -1,4 +1,5 @@
-import 'package:base_flutter/core/common/domain/entities/user_models.dart';
+import 'package:hm_flutter_base/core/common/domain/entities/business_models.dart';
+import 'package:hm_flutter_base/core/common/domain/entities/user_models.dart';
 import 'package:flutter/material.dart';
 
 class LoginResponseModel {
@@ -6,13 +7,32 @@ class LoginResponseModel {
   final String message;
   final String? accessToken;
   final UserModels? user;
+  final BusinessModels?  businessSelectModels;
 
   LoginResponseModel({
     required this.isAuthenticated,
     required this.message,
     this.accessToken,
     this.user,
+    this.businessSelectModels
   });
+
+    // cuando el usuario selecione una empresa 
+    LoginResponseModel copyWith({
+        bool? isAuthenticated,
+        String? message,
+        String? accessToken,
+        UserModels? user,
+        BusinessModels? businessSelectModels,
+    }) {
+        return LoginResponseModel(
+        isAuthenticated: isAuthenticated ?? this.isAuthenticated,
+        message: message ?? this.message,
+        accessToken: accessToken ?? this.accessToken,
+        user: user ?? this.user,
+        businessSelectModels: businessSelectModels ?? this.businessSelectModels,
+        );
+    }
 
   factory LoginResponseModel.fromApi(
     Map<String, dynamic> json,

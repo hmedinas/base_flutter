@@ -1,7 +1,9 @@
 
 // creamos un provider Global
-import 'package:base_flutter/core/common/domain/entities/user_models.dart';
-import 'package:base_flutter/features/auth/data/models/login_response_model.dart';
+import 'package:hm_flutter_base/core/common/domain/entities/business_models.dart';
+import 'package:hm_flutter_base/core/common/domain/entities/user_models.dart';
+import 'package:hm_flutter_base/core/utils/console.dart';
+import 'package:hm_flutter_base/features/auth/data/models/login_response_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
@@ -18,9 +20,19 @@ class SessionNotifier extends Notifier<LoginResponseModel?> {
     return null;
   }
 
-  // Guardar Datos despues del login
+  // Accion 1: Guardar Datos despues del login
   void updateSession(LoginResponseModel? userData) {
     state = userData;
+  }
+
+  // Accion 2: Seleccionar una empresa
+  void setBusiness(BusinessModels empresa) {
+    if (state != null) {
+      // "Copiamos" el estado actual pero cambiando solo la empresa seleccionada
+      state = state!.copyWith(businessSelectModels: empresa);
+      
+      Console.log('🏢 Empresa seleccionada: ${empresa.empresa}', layer: 'SESSION');
+    }
   }
 
   // Cerrar sesión

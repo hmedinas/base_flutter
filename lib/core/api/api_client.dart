@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:base_flutter/core/mock/routes_mock.dart';
-import 'package:base_flutter/core/utils/console.dart';
+import 'package:hm_flutter_base/core/mock/routes_mock.dart';
+import 'package:hm_flutter_base/core/utils/console.dart';
 import 'package:dio/dio.dart';
-import 'package:base_flutter/core/config/config_reader.dart';
+import 'package:hm_flutter_base/core/config/config_reader.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/services.dart';
 

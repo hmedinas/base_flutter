@@ -1,7 +1,7 @@
 {
   "isAuthenticated": true,
   "message" : "Autenticado correctamente",
-  "accessToken": "123e123dx123xh123ux213x21-x312x3im1239x12x3213-x123mx123x21",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikh1Z28gTWVkaW5hIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE5OTk5OTk5OTksImVtcHJlc2EiOiJTT0ZUV0FSRSBTMkEiLCJyb2xlIjoiYWRtaW4ifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
   "user": {
     "title":  "Tecnico",
     "fullName": "Juan Medrano",
@@ -18,14 +18,16 @@
     ],
     "businessModels":[
       {
-        "empresa":"Empresa 1",
-        "desEmpresa":"Descripcion empresa 1",
-        "negocio":"Negocio 1"
+        "idEmpresa": 1,
+        "empresa": "Empresa 1",
+        "desEmpresa":"Descripcion empresa",
+        "negocio":"IMPORTACIONES"
       },
       {
-        "empresa":"Empresa 2",
-        "desEmpresa":"Descripcion empresa 2",
-        "negocio":"Negocio 2"
+        "idEmpresa": 2,
+        "empresa": "Empresa 2",
+        "desEmpresa":"Descripcion empresa",
+        "negocio":"EXPORTACIONES"
       }
     ]
   }

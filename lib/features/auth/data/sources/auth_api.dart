@@ -1,7 +1,7 @@
-import 'package:base_flutter/core/api/api_client.dart';
-import 'package:base_flutter/core/constants/app_end_point.dart';
-import 'package:base_flutter/core/utils/console.dart';
-import 'package:base_flutter/features/auth/data/models/login_response_model.dart';
+import 'package:hm_flutter_base/core/api/api_client.dart';
+import 'package:hm_flutter_base/core/constants/app_end_point.dart';
+import 'package:hm_flutter_base/core/utils/console.dart';
+import 'package:hm_flutter_base/features/auth/data/models/login_response_model.dart';
 import 'package:dio/dio.dart';
 
 class AuthApi {

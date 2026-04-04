@@ -1,5 +1,5 @@
 
-import 'package:base_flutter/core/theme/app_theme.dart';
+import 'package:hm_flutter_base/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class LoginBackgroundWidget extends StatelessWidget {

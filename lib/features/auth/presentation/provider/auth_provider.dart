@@ -1,5 +1,5 @@
-import 'package:base_flutter/features/auth/data/models/login_response_model.dart';
-import 'package:base_flutter/features/auth/data/sources/auth_api.dart';
+import 'package:hm_flutter_base/features/auth/data/models/login_response_model.dart';
+import 'package:hm_flutter_base/features/auth/data/sources/auth_api.dart';
 import 'package:flutter/material.dart';
 
 class AuthProvider extends ChangeNotifier {

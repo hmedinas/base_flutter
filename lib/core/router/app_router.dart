@@ -1,16 +1,18 @@
-import 'package:base_flutter/core/config/config_reader.dart';
-import 'package:base_flutter/core/constants/app_contans.dart';
-import 'package:base_flutter/features/auth/presentation/screens/login_provider_screen.dart';
-import 'package:base_flutter/features/auth/presentation/screens/login_riverpod_new_screen.dart';
-import 'package:base_flutter/features/auth/presentation/screens/login_riverpod_screen.dart';
-import 'package:base_flutter/features/error_page/presentation/screens/error_screen.dart';
-import 'package:base_flutter/features/error_page/presentation/screens/not_found_screen.dart';
-import 'package:base_flutter/features/home/presentation/screens/home_bento_box_screen.dart';
-import 'package:base_flutter/features/home/presentation/screens/home_categori_screen.dart';
-import 'package:base_flutter/features/home/presentation/screens/home_dashboard_screen.dart';
-import 'package:base_flutter/features/home/presentation/screens/home_grid_screen.dart';
-import 'package:base_flutter/features/home/presentation/screens/home_radial_screen.dart';
-import 'package:base_flutter/features/initialization/presentation/screens/splash_screen.dart';
+import 'package:hm_flutter_base/core/config/config_reader.dart';
+import 'package:hm_flutter_base/core/constants/app_contans.dart';
+import 'package:hm_flutter_base/features/auth/presentation/screens/login_provider_screen.dart';
+import 'package:hm_flutter_base/features/auth/presentation/screens/login_riverpod_new_screen.dart';
+import 'package:hm_flutter_base/features/auth/presentation/screens/login_riverpod_screen.dart';
+import 'package:hm_flutter_base/features/error_page/presentation/screens/error_screen.dart';
+import 'package:hm_flutter_base/features/error_page/presentation/screens/not_found_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/home_bento_box_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/home_categori_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/home_dashboard_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/home_grid_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/home_radial_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/selection_business_grid_screen.dart';
+import 'package:hm_flutter_base/features/home/presentation/screens/selection_bussiness_screen.dart';
+import 'package:hm_flutter_base/features/initialization/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -33,6 +35,12 @@ class AppRouter {
                 // builder = (_) => const LoginRiverpodScreen();
                 builder = (_) => const LoginRiverpodNewScreen();
 
+                break;
+            case AppRoutesScreen.selectBusiness:
+                builder = (_) => const SelectionBusinessScreen();
+                break;
+            case AppRoutesScreen.selectBusinessGrid:
+                builder = (_) => const SelectionBusinessGridScreen();
                 break;
             case AppRoutesScreen.homeBentoBox:
                 builder = (_) => const HomeBentoBoxScreen();

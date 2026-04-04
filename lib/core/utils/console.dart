@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:base_flutter/core/config/app_config.dart';
-import 'package:base_flutter/core/config/config_reader.dart';
+import 'package:hm_flutter_base/core/config/app_config.dart';
+import 'package:hm_flutter_base/core/config/config_reader.dart';
 import 'package:flutter/services.dart';
 
 class Console {

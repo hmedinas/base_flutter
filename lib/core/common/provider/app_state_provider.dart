@@ -1,6 +1,6 @@
 
-import 'package:base_flutter/features/auth/data/sources/auth_api.dart';
-import 'package:base_flutter/features/auth/presentation/provider/auth_provider.dart';
+import 'package:hm_flutter_base/features/auth/data/sources/auth_api.dart';
+import 'package:hm_flutter_base/features/auth/presentation/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,4 +1,4 @@
-import 'package:base_flutter/core/constants/app_contans.dart';
+import 'package:hm_flutter_base/core/constants/app_contans.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

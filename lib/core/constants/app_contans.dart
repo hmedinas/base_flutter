@@ -10,18 +10,19 @@ class AppRoutesScreen {
   static const String error = 'error';
   static const String devDashboard = 'not_found';
 
+  static const String selectBusiness = 'select_business';
+  static const String selectBusinessGrid = 'select_businessGrid';
   static const String homeRadial = 'home_radial';
   static const String homeBentoBox = 'home_bentoBox';
   static const String homeCategori = 'home_categori';
   static const String homeDashboard = 'home_dashboard';
   static const String homeGrid = 'home_grid';
-
 }
 
 class AppAssets {
   // Constructor privado para evitar que se instancie
   AppAssets._();
-  static const String logo = 'assets/images/logo.jpg';
+  static const String logo = 'assets/images/logo_blue.png';
 }
 
 class AppColors {
@@ -37,6 +38,10 @@ class AppColors {
   static const Color headerPanel = Color.fromARGB(255, 0, 136, 40);
   static const Color titleGraphic = Colors.green;
   static const Color backgroundGraphic = Color.fromARGB(255, 227, 225, 225);
+
+  static const Color appBarIcon = Color(0xFFFF0200);
+  static const Color appBarTextTitle = Colors.white;
+  static const Color appBarTextSubTitle = Color(0xff24CBE5);
 
   // Paleta para Gráficos (Pie charts, Bar charts, etc.)
   static const List<Color> graphics = [

@@ -1,4 +1,4 @@
-import 'package:base_flutter/core/constants/app_end_point.dart';
+import 'package:hm_flutter_base/core/constants/app_end_point.dart';
 
 class RoutesMock {
   static const String _base = 'assets/mocks';

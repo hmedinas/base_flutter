@@ -1,9 +1,9 @@
-import 'package:base_flutter/core/constants/app_contans.dart';
-import 'package:base_flutter/core/theme/app_theme.dart';
-import 'package:base_flutter/core/utils/alerts.dart';
-import 'package:base_flutter/features/auth/presentation/provider/auth_riverpod.dart';
-import 'package:base_flutter/features/auth/presentation/widgets/login_background_widget.dart';
-import 'package:base_flutter/features/auth/presentation/widgets/card_container_widget.dart';
+import 'package:hm_flutter_base/core/constants/app_contans.dart';
+import 'package:hm_flutter_base/core/theme/app_theme.dart';
+import 'package:hm_flutter_base/core/utils/alerts.dart';
+import 'package:hm_flutter_base/features/auth/presentation/provider/auth_riverpod.dart';
+import 'package:hm_flutter_base/features/auth/presentation/widgets/login_background_widget.dart';
+import 'package:hm_flutter_base/features/auth/presentation/widgets/card_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,8 +22,8 @@ class LoginRiverpodScreen extends ConsumerWidget {
               child: Column(
                 children: [
                   const SizedBox(
-                    width: 190,
-                    height: 55,
+                    width: 230,
+                    height: 60,
                     child: Image(
                       image: AssetImage(AppAssets.logo),
                       fit: BoxFit.fill,
@@ -80,22 +80,25 @@ class _LoginFormRiverpod extends ConsumerWidget {
         ),
         const SizedBox(height: 25),
         // usamos el isloadin para controlar el boton
-        ElevatedButton( 
+        ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.buttonPrimary, // color normal
             foregroundColor: Colors.white, // texto
-            disabledBackgroundColor: Colors.grey, // color cuando está deshabilitado
+            disabledBackgroundColor:
+                Colors.grey, // color cuando está deshabilitado
           ),
           onPressed: authState.isLoading
               ? null
               : () async {
-                   print('press button');
-                   // quitamos el techado
+                  print('press button');
+                  // quitamos el techado
                   FocusScope.of(context).unfocus();
 
                   if (!authLogic.isValidForm()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Usuario o contraseña inválidos')),
+                      const SnackBar(
+                        content: Text('Usuario o contraseña inválidos'),
+                      ),
                     );
                     return;
                   }
@@ -103,11 +106,15 @@ class _LoginFormRiverpod extends ConsumerWidget {
                   // Llamar login
                   final response = await authLogic.login();
 
-                  if (response == null) 
-                    return;
-                    
+                  if (response == null) return;
+
                   if (response.isAuthenticated) {
                     mostrarAlert(context, "OK", typeAlert.ok);
+                    Navigator.pushReplacementNamed(
+                      context,
+                      AppRoutesScreen.selectBusinessGrid,
+                    );
+                    return;
                   } else {
                     mostrarAlert(context, response.message, typeAlert.error);
                   }
@@ -122,6 +129,5 @@ class _LoginFormRiverpod extends ConsumerWidget {
         ),
       ],
     );
-
   }
 }

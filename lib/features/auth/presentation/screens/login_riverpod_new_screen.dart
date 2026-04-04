@@ -1,12 +1,12 @@
-import 'package:base_flutter/core/common/provider/session_provider.dart';
-import 'package:base_flutter/core/constants/app_contans.dart';
-import 'package:base_flutter/core/theme/app_theme.dart';
-import 'package:base_flutter/core/utils/alerts.dart';
-import 'package:base_flutter/features/auth/data/sources/auth_api.dart';
-import 'package:base_flutter/features/auth/presentation/provider/auth_riverpod.dart';
-import 'package:base_flutter/features/auth/presentation/provider/auth_riverpod_new.dart';
-import 'package:base_flutter/features/auth/presentation/widgets/login_background_widget.dart';
-import 'package:base_flutter/features/auth/presentation/widgets/card_container_widget.dart';
+import 'package:hm_flutter_base/core/common/provider/session_provider.dart';
+import 'package:hm_flutter_base/core/constants/app_contans.dart';
+import 'package:hm_flutter_base/core/theme/app_theme.dart';
+import 'package:hm_flutter_base/core/utils/alerts.dart';
+import 'package:hm_flutter_base/features/auth/data/sources/auth_api.dart';
+import 'package:hm_flutter_base/features/auth/presentation/provider/auth_riverpod.dart';
+import 'package:hm_flutter_base/features/auth/presentation/provider/auth_riverpod_new.dart';
+import 'package:hm_flutter_base/features/auth/presentation/widgets/login_background_widget.dart';
+import 'package:hm_flutter_base/features/auth/presentation/widgets/card_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,8 +25,8 @@ class LoginRiverpodNewScreen extends ConsumerWidget {
               child: Column(
                 children: [
                   const SizedBox(
-                    width: 190,
-                    height: 55,
+                    width: 230,
+                    height: 60,
                     child: Image(
                       image: AssetImage(AppAssets.logo),
                       fit: BoxFit.fill,
@@ -121,7 +121,7 @@ class _LoginFormRiverpodNew extends ConsumerWidget {
                           .updateSession(response);
 
                       // Navegamos a la pantalla principal
-                      Navigator.pushReplacementNamed(context, AppRoutesScreen.homeGrid);
+                      Navigator.pushReplacementNamed(context, AppRoutesScreen.selectBusinessGrid);
                       return;
                     } else {
                       mostrarAlert(context, response.message, typeAlert.error);

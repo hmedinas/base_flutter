@@ -2,9 +2,9 @@
     esto es importante para menejar riverpod
 */
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:base_flutter/features/auth/data/models/auth_state.dart';
-import 'package:base_flutter/features/auth/data/sources/auth_api.dart';
-import 'package:base_flutter/features/auth/data/models/login_response_model.dart';
+import 'package:hm_flutter_base/features/auth/data/models/auth_state.dart';
+import 'package:hm_flutter_base/features/auth/data/sources/auth_api.dart';
+import 'package:hm_flutter_base/features/auth/data/models/login_response_model.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
 // Definimos el provider de forma global

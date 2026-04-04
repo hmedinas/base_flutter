@@ -1,8 +1,8 @@
-import 'package:base_flutter/core/common/provider/app_state_provider.dart';
-import 'package:base_flutter/core/config/config_reader.dart';
-import 'package:base_flutter/core/router/app_router.dart';
-import 'package:base_flutter/core/theme/app_theme.dart';
-import 'package:base_flutter/core/utils/console.dart';
+import 'package:hm_flutter_base/core/common/provider/app_state_provider.dart';
+import 'package:hm_flutter_base/core/config/config_reader.dart';
+import 'package:hm_flutter_base/core/router/app_router.dart';
+import 'package:hm_flutter_base/core/theme/app_theme.dart';
+import 'package:hm_flutter_base/core/utils/console.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';

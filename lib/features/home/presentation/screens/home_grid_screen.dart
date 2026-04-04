@@ -1,6 +1,8 @@
-import 'package:base_flutter/core/common/provider/session_provider.dart';
+import 'package:hm_flutter_base/core/common/provider/session_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hm_flutter_base/core/ui/widgets/app_bar_widget.dart';
+import 'package:hm_flutter_base/core/ui/widgets/drawer_widget.dart';
 
 class HomeGridScreen extends ConsumerWidget {
     const HomeGridScreen({super.key});
@@ -13,9 +15,8 @@ class HomeGridScreen extends ConsumerWidget {
     final user = session?.user;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Bienvenido, ${user?.fullName ?? 'Usuario'}"),
-      ),
+      appBar: AppBarWidget(),
+      drawer: DrawerWidget(),
       body: Center(
         child: Text("Tu cargo es: ${user?.title}"),
       ),

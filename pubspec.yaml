@@ -1,4 +1,4 @@
-name: base_flutter
+name: hm_flutter_base
 description: "proyecto base  flutter."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -39,12 +39,14 @@ dependencies:
   rflutter_alert: ^2.0.7
   dio: ^5.9.2
   flutter_riverpod: ^3.3.1
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
   http_mock_adapter: ^0.6.1
+  change_app_package_name: ^1.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -57,3 +59,12 @@ flutter:
     - assets/images/
     - assets/mocks/auth/
     - assets/mocks/user/
+
+# Configuración de flutter_launcher_icons
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/icon_foreground.png"
+  adaptive_icon_foreground: "assets/images/icon_foreground.png"
+  adaptive_icon_background: "assets/images/icon_background.png"

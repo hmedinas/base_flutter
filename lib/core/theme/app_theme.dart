@@ -1,4 +1,4 @@
-import 'package:base_flutter/core/constants/app_contans.dart';
+import 'package:hm_flutter_base/core/constants/app_contans.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
@@ -7,11 +7,16 @@ class AppTheme {
 
   static final ThemeData baseTheme = ThemeData.light().copyWith(
     primaryColor: AppColors.background,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.background,
+      foregroundColor: AppColors.titleGraphic,
+      elevation: 0.5,
+    ),
+
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       primary: AppColors.primary,
     ),
-    appBarTheme: AppBarTheme(color: AppColors.background),
     inputDecorationTheme: const InputDecorationTheme(
       floatingLabelStyle: TextStyle(color: AppColors.background),
       enabledBorder: OutlineInputBorder(
