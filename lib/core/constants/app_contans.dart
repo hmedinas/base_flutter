@@ -23,6 +23,7 @@ class AppAssets {
   // Constructor privado para evitar que se instancie
   AppAssets._();
   static const String logo = 'assets/images/logo_blue.png';
+ static const String logoSplash = 'assets/images/logo_white.png';
 }
 
 class AppColors {

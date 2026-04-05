@@ -77,7 +77,7 @@ class SelectionBusinessGridScreen extends ConsumerWidget {
                         accentColor: Color.fromARGB(130, 23, 94, 161),
                         onTap: () {
                             ref.read(sessionProvider.notifier).setBusiness(item);
-                            Navigator.pushReplacementNamed(context, AppRoutesScreen.homeGrid);
+                            Navigator.pushReplacementNamed(context, AppRoutesScreen.homeRadial);
                         },
                         );
                             /*                

@@ -48,7 +48,7 @@ class AppRouter {
             case AppRoutesScreen.homeCategori:
                 builder = (_) => const HomeCategoriScreen();
                 break;
-            case AppRoutesScreen.devDashboard:
+            case AppRoutesScreen.homeDashboard:
                 builder = (_) => const HomeDashboardScreen();
                 break;
             case AppRoutesScreen.homeGrid:

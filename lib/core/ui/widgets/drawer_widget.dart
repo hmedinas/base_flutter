@@ -38,14 +38,35 @@ class DrawerWidget extends ConsumerWidget {
                       // 2.-  opciones del menu
                       ListTile(
                           leading: const Icon(Icons.home),
-                          title: const Text('Inicio'),
-                          onTap: () => Navigator.pop(context), // Cierra el drawer
+                          title: const Text('Radial'),
+                          onTap: () =>   Navigator.pushReplacementNamed(context, AppRoutesScreen.homeRadial), // Cierra el drawer
                       ),
                       ListTile(
                           leading: const Icon(Icons.inventory),
-                          title: const Text('Inventario'),
+                          title: const Text('Bento box'),
                           onTap: () {
-                              // Navegar a inventario
+                               Navigator.pushReplacementNamed(context, AppRoutesScreen.homeBentoBox);
+                          },
+                      ),
+                       ListTile(
+                          leading: const Icon(Icons.category),
+                          title: const Text('Categoria'),
+                          onTap: () {
+                               Navigator.pushReplacementNamed(context, AppRoutesScreen.homeCategori);
+                          },
+                      ),
+                       ListTile(
+                          leading: const Icon(Icons.dashboard),
+                          title: const Text('Dashboard'),
+                          onTap: () {
+                               Navigator.pushReplacementNamed(context, AppRoutesScreen.homeDashboard);
+                          },
+                      ),
+                          ListTile(
+                          leading: const Icon(Icons.dashboard),
+                          title: const Text('Grid'),
+                          onTap: () {
+                               Navigator.pushReplacementNamed(context, AppRoutesScreen.homeGrid);
                           },
                       ),
                       const Divider(),

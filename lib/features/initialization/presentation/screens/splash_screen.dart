@@ -51,8 +51,8 @@ class _SplashScreenState extends State<SplashScreen> {
             Hero(
               tag: 'logo_app',
               child: Image.asset(
-                AppAssets.logo,
-                width: 150,
+                AppAssets.logoSplash,
+                width: 230,
                 errorBuilder: (context, error, stackTrace) => const Icon(
                   Icons.rocket_launch, 
                   size: 80, 
