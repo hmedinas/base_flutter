@@ -233,7 +233,12 @@ Sistema completo de autenticación con múltiples implementaciones de gestión d
 - **Screens**:
   - `login_provider_screen.dart` - Login con Provider (ChangeNotifier)
   - `login_riverpod_screen.dart` - Login con Riverpod (StateNotifier)
-  - `login_riverpod_new_screen.dart` - Login con Riverpod AsyncNotifier
+  - `login_riverpod_new_screen.dart` - Login con Riverpod AsyncNotifier 
+  
+  <p align="center">
+    <img src="assets/readme/img1.png" width="250" title="Miniatura de la app">
+  </p>
+
   
 - **State Management**: Tres implementaciones diferentes para comparar enfoques
   - Provider (ChangeNotifier): Más simple, ideal para proyectos pequeños
@@ -248,12 +253,36 @@ Sistema completo de autenticación con múltiples implementaciones de gestión d
 Múltiples diseños de pantalla principal para diferentes necesidades:
 
 - `home_dashboard_screen.dart` - Dashboard con métricas y estadísticas
+ <p align="center">
+    <img src="assets/readme/img7.png" width="250" title="Miniatura de la app">
+  </p>
+
 - `home_grid_screen.dart` - Vista en cuadrícula
+ <p align="center">
+    <img src="assets/readme/img8.png" width="250" title="Miniatura de la app">
+  </p>
+
 - `home_categori_screen.dart` - Vista por categorías
+ <p align="center">
+    <img src="assets/readme/img6.png" width="250" title="Miniatura de la app">
+  </p>
+
 - `home_bento_box_screen.dart` - Diseño Bento Box moderno
+ <p align="center">
+    <img src="assets/readme/img5.png" width="250" title="Miniatura de la app">
+  </p>
+
 - `home_radial_screen.dart` - Visualización radial con Syncfusion Charts
+ <p align="center">
+    <img src="assets/readme/img3.png" width="250" title="Miniatura de la app">
+  </p>
+
 - `selection_business_grid_screen.dart` - Selector de negocios en grid
-- `selection_bussiness_screen.dart` - Selector de negocios
+ <p align="center">
+    <img src="assets/readme/img2.png" width="250" title="Miniatura de la app">
+  </p>
+
+- `selection_bussiness_screen.dart` - Selector de negocios pero como una lista,lamentablemente no saque imagen de esto jaja.
 
 ### 🚀 Initialization
 Gestión del flujo de inicialización de la aplicación:
@@ -294,6 +323,10 @@ Páginas de error profesionales para diferentes casos:
 #### Global Widgets
 - `app_bar_widget.dart` - AppBar consistente
 - `drawer_widget.dart` - Menú de navegación lateral
+ <p align="center">
+    <img src="assets/readme/img4.png" width="250" title="Miniatura de la app">
+  </p>
+  
 - `business_card_widget.dart` - Tarjeta de negocio reutilizable
 - `logout_button_widget.dart` - Botón de cerrar sesión
 
